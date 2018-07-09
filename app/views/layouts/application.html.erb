@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html style class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+  <head>
+    <title>TempletApp</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
+    <meta content="Coderthemes" name="author">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_link_tag  params[:controller], media: 'all'%>
+    
+    
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header id="topnav">
+      <%= render 'shared/topbar-main' %>
+      <%= render 'shared/navbar-custom' %>
+    </header>
+    
+    <div class="wrapper">
+      <%= yield %>
+      
+      <%=render 'shared/rsidebar'%>
+      
+    </div>
+    
+    
+    <%= render 'shared/footer' %>
+    <%= yield 'javascript_content'%>
+  </body>
+  
+</html>
